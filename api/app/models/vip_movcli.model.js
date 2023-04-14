@@ -2,7 +2,8 @@ module.exports = (sequelize, Sequelize) => {
   const Mov = sequelize.define("vip_movcli", {
     idmov: {
       type: Sequelize.INTEGER,
-        primaryKey: true
+      autoIncrement: true,
+      primaryKey: true
     },
     id_cliente: {
       type: Sequelize.STRING

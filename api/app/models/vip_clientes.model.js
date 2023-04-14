@@ -2,7 +2,8 @@ module.exports = (sequelize, Sequelize) => {
   const Clientes = sequelize.define("vip_clientes", {
     id_cliente: {
       type: Sequelize.INTEGER,
-        primaryKey: true
+      autoIncrement: true,
+      primaryKey: true
     },
     nome: {
       type: Sequelize.STRING
@@ -36,8 +37,10 @@ module.exports = (sequelize, Sequelize) => {
     },
     livre_text: {
       type: Sequelize.STRING
-    },
-  });
+    }
+  }, {
+    freezeTableName: true,
+});
 
   return Clientes;
 };

@@ -1,0 +1,22 @@
+<h4 class="text-center">Segunda validacao</h4>
+
+<div class="container">
+  <form [formGroup]="secondForm" (ngSubmit)="onSubmit()" novalidate>
+		<div>
+			<label [hidden]="hiddenDay">Dia de Nascimento:</label>
+      <input type="number" autocomplete="off" [hidden]="hiddenDay" pattern="\d*" maxlength="2" class="form-control" id="dia" formControlName="dia">
+    </div>
+
+    <div>
+			<label [hidden]="hiddenMonth">Mes de Nascimento:</label>
+      <input type="number" autocomplete="off" [hidden]="hiddenMonth" pattern="\d*" min="1" max="2" maxlength="12" class="form-control" id="mes" formControlName="mes">
+    </div>
+
+    <div>
+			<label [hidden]="hiddenYear">Ano de Nascimento:</label>
+      <input type="number" autocomplete="off" [hidden]="hiddenYear" pattern="\d*" maxlength="2022" class="form-control" id="ano" formControlName="ano">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

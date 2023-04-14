@@ -1,0 +1,25 @@
+<h4 class="text-center">Login</h4>
+
+<div class="container">
+	<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+		<div class="form-group">
+			<label for="exampleInputEmail1">CPF:</label>
+      <input type="number" class="form-control" formControlName="cpf" placeholder="Digite o cpf">
+      <small class="form-text text-muted"
+        *ngIf="loginForm.controls.cpf.touched && loginForm.controls.cpf.errors?.required">
+          Digite o cpf.!
+      </small>
+
+      <small class="form-text text-muted"
+      *ngIf="loginForm.controls.cpf.touched && loginForm.controls.cpf.errors?.email">
+      Digite o cpf correto.!
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" formControlName="password" placeholder="Senha">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+  </form>
+</div>
